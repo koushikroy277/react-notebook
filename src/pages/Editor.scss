@@ -1,0 +1,64 @@
+@mixin reactToast($right) {
+  position: absolute;
+  bottom: 20px;
+  right: $right;
+  border-radius: 10px;
+  background-color: var(--theme);
+  color: #fff;
+  box-shadow: var(--dark-shadow);
+  transition: .2s;
+
+  .toastWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 30px;
+
+    h1 {
+      font-size: 1.4rem;
+      margin-left: 10px;
+    }
+  }
+}
+
+.noteContainer {
+  overflow-y: scroll;
+  height: 100vh;
+
+  .toastNoti {
+    @include reactToast(-100%);
+  }
+
+  .toastNoti.active{
+    @include reactToast(20px);
+  }
+}
+
+.startTemplate {
+  .templateWrapper {
+    display: grid;
+    place-items: center;
+
+    .imgWrapper{
+      margin-left: -70px;
+    }
+
+    button {
+      background-color: var(--theme);
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 20px;
+      padding: 15px 25px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--theme);
+        border: 1px solid var(--theme);
+        background: none;
+      }
+    }
+  }
+}

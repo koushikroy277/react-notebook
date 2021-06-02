@@ -1,0 +1,84 @@
+@mixin bgActive($bg, $color) {
+  background-color: $bg;
+  color: $color;
+  font-family: var(--note-font);
+  border-bottom: var(--border);
+  padding: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--sidebar-theme);
+    border: none;
+  }
+
+  p {
+    font-size: 15px;
+    opacity: 0.7;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 15px;
+    opacity: 0.8;
+  }
+}
+
+.sidebar {
+  border-right: var(--sidebar-border);
+  height: 100vh;
+
+  .sideHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: var(--sidebar-border);
+    height: 60px;
+    padding: 10px;
+
+    .sideTitle {
+      display: flex;
+
+      .sideLogo {
+        color: var(--theme);
+        margin: 0 10px;
+      }
+    }
+
+    button {
+      color: var(--theme);
+      background-color: var(--light-back);
+      border: 1px solid var(--theme);
+      outline: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 8px 25px;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        color: var(--light-back);
+        background-color: var(--theme);
+      }
+    }
+
+  }
+  
+  .sideNotes {
+    height: 100%;
+
+    .noteList {
+      @include bgActive(#fff, #000);
+    }
+
+    .noteList.active {
+      @include bgActive(var(--sidebar-active), #000);
+    }
+  }
+}

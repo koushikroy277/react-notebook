@@ -1,0 +1,99 @@
+@mixin commonTheme($back, $typo) {
+  .noteHeader {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: $back;
+    border-bottom: var(--border);
+    box-shadow: var(--box-shadow);
+    height: 60px;
+
+    .btnContain {
+      position: relative;
+
+      .btnWrapper {
+        opacity: .8;
+        background-color: var(--theme);
+        color: #fff;
+        cursor: pointer;
+        margin: 0 10px;
+        padding: 5px 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .downTag {
+        position: absolute;
+        background-color: #33333377;
+        opacity: 0;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 5px;
+        padding: 10px 15px;
+        transition: 0.3s;
+      }
+
+      .downTag.show {
+        opacity: 1;
+      }
+    }
+  }
+
+  .mainNote {
+    padding-top: 80px;
+    background-color: $back;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: -1;
+
+    #title {
+      background-color: $back;
+      color: $typo;
+      outline: none;
+      border: none;
+      width: 100%;
+      margin: 20px 20px 0 20px;
+      padding: 15px 15px 0 15px;
+      font-size: 2rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    #des {
+      background-color: $back;
+      color: $typo;
+      outline: none;
+      border: none;
+      width: 100%;
+      font-size: 18px;
+      margin: 0 20px;
+      padding: 0 20px 20px 20px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+.noteEditWrap.Light {
+  @include commonTheme(var(--back), var(--typo));
+}
+.noteEditWrap.Dark {
+  @include commonTheme(var(--back), var(--typo));
+}
+.noteEditWrap.SolarizedLight {
+  @include commonTheme(var(--back), var(--typo));
+}
+.noteEditWrap.SolarizedDark {
+  @include commonTheme(var(--back), var(--typo));
+}

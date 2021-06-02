@@ -1,0 +1,86 @@
+@mixin themeMixin($bg, $border) {
+  background-color: $bg;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $border;
+  border-radius: 50%;
+  padding: 0 7px;
+  margin: 0 15px;
+}
+
+.themeContainer {
+  position: absolute;
+  right: 35%;
+
+  &:hover {
+    .themeWrapper {
+      display: flex;
+    }
+  }
+
+  .themeBtn {
+    display: flex;
+    background: none;
+    outline: none;
+    padding: 2px 7px;
+    cursor: pointer;
+
+    .change{
+      color: #fff;
+      font-size: 25px;
+    }
+
+    .noChange{
+      color: #000;
+      font-size: 25px;
+    }
+
+    .switch {
+      margin-left: 15px;
+      color: #ff0000;
+    }
+  }
+
+  .themeWrapper {
+    display: none;
+
+    .themeMenu {
+      position: absolute;
+      top: 35px;
+      right: 0;
+      display: flex;
+      background: #a4b3c9;
+      border-bottom: 2px solid #03173b;
+      border-radius: 10px 10px 0 0;
+      box-shadow: var(--box-shadow);
+      cursor: pointer;
+      padding: 20px 40px;
+
+      .themeList {
+        display: flex;
+        align-items: center;
+
+        h1 {
+          font-size: 16px;
+          color: var(--dark-back);
+        }
+
+        .themePalette {
+          @include themeMixin(var(--light-back), var(--dark-back));
+        }
+        .themePalette2 {
+          @include themeMixin(var(--dark-back), var(--solarized-light-back));
+        }
+        .themePalette3 {
+          @include themeMixin(var(--solarized-light-back), var(--dark-back));
+        }
+        .themePalette4 {
+          @include themeMixin(
+            var(--solarized-dark-back),
+            var(--solarized-light-back)
+          );
+        }
+      }
+    }
+  }
+}

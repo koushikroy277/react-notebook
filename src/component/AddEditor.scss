@@ -1,0 +1,132 @@
+@mixin commonTheme($back, $typo) {
+  .noteHeader {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $back;
+    border-bottom: var(--border);
+    box-shadow: var(--box-shadow);
+    height: 60px;
+
+    .addButton {
+      background-color: $back;
+      color: var(--theme);
+      cursor: pointer;
+      border: var(--color-border);
+      outline: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px 15px;
+      margin: 0 10px;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: var(--theme);
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+
+  .mainNote {
+    padding-top: 80px;
+    background-color: $back;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: -1;
+    transition: 0.2s;
+
+    #title {
+      background-color: $back;
+      color: $typo;
+      outline: none;
+      border: none;
+      width: 100%;
+      margin: 20px 20px 0 20px;
+      padding: 15px 15px 0 15px;
+      font-size: 2rem;
+      transition: 0.2s;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .titleBold {
+      &::selection {
+        font-weight: 800;
+        color: #fff;
+        background-color: blue;
+      }
+    }
+    .titleItalic {
+      &::selection {
+        font-style: italic;
+        color: #fff;
+        background-color: blue;
+      }
+    }
+    .titleUnderline {
+      &::selection {
+        text-decoration: underline;
+        color: #fff;
+        background-color: blue;
+      }
+    }
+
+    #des {
+      background-color: $back;
+      color: $typo;
+      outline: none;
+      border: none;
+      width: 100%;
+      font-size: 18px;
+      margin: 0 20px;
+      padding: 0 20px 20px 20px;
+      transition: 0.2s;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .desBold {
+      &::selection {
+        font-weight: 800;
+        color: #fff;
+        background-color: blue;
+      }
+    }
+    .desItalic {
+      &::selection {
+        font-style: italic;
+        color: #fff;
+        background-color: blue;
+      }
+    }
+    .desUnderline {
+      &::selection {
+        text-decoration: underline;
+        color: #fff;
+        background-color: blue;
+      }
+    }
+  }
+}
+
+.noteAddWrap.Light {
+  @include commonTheme(var(--back), var(--typo));
+}
+.noteAddWrap.Dark {
+  @include commonTheme(var(--back), var(--typo));
+}
+.noteAddWrap.SolarizedLight {
+  @include commonTheme(var(--back), var(--typo));
+}
+.noteAddWrap.SolarizedDark {
+  @include commonTheme(var(--back), var(--typo));
+}

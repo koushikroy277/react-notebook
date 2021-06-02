@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: var(--font-family);
+  overflow: hidden;
+}
+
+:root {
+  --color-border: 1px solid #fa0404bd;
+  --body-theme: #fa06066c;
+  --font-family: 'Overpass', sans-serif; 
+  --note-font: Arial, Helvetica, sans-serif;
+  --box-shadow: 0 4px 20px -10px #00000080;
+  --dark-shadow: 3px 2px 14px 3px rgba(0,0,0,0.3);
+  --theme: #eb1527;
+  --sidebar-theme: #f5dada;
+  --sidebar-active: #fddddd;
+  --sidebar-border: 2px solid #fc0318;
+
+  --light-back: #fff;
+  --dark-back: #000;
+  --solarized-light-back: #cff5f2;
+  --solarized-dark-back: #032724;
+}
+
+.Dark{
+  --border: 1px solid #fff;
+  --sidebar-theme: #f5dada;
+  --sidebar-active: #fddddd;
+  --back: #000;
+  --typo: #fff;
+}
+
+.Light{
+  --border: 1px solid #00000025;
+  --sidebar-theme: #f5dada;
+  --sidebar-active: #fddddd;
+  --back: #fff;
+  --typo: #000;
+}
+
+.SolarizedLight{
+  --border: 1px solid #0202022c;
+  --sidebar-theme: #f5dada;
+  --sidebar-active: #fddddd;
+  --back: #cff5f2;
+  --typo: #000;
+}
+
+.SolarizedDark{
+  --border: 1px solid #fff;
+  --sidebar-theme: #f5dada;
+  --sidebar-active: #fddddd;
+  --back: #032724;
+  --typo: #fff;
+}

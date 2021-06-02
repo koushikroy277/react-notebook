@@ -1,0 +1,12 @@
+.landContainer{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  .sideBar {
+    height: 100%;
+  }
+
+  .mainBar {
+    height: 100%;
+  }
+}
